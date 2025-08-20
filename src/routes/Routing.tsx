@@ -1,5 +1,6 @@
 import { MemoryRouter, Route, Routes } from "react-router-dom";
-import Test from "../components/Test";
+import Home from "../components/Home";
+
 
 export default function Routing() {
     return (
@@ -9,7 +10,7 @@ export default function Routing() {
                     <Route
                         index
                         element={
-                            <Test />
+                            <Home />
                         } />
 
                 </Routes>
