@@ -1,5 +1,4 @@
-import { useDatasStorage } from '../hooks/useDatasStorage';
-import '../App.css';
+import { useDatasStorage } from '../../hooks/useDatasStorage';
 
 export type User = {
     nom: string;
@@ -13,8 +12,6 @@ function SectionEtudiant() {
     const [nbrEtudiant, setNbrEtudiant, removeEtudiant] = useDatasStorage<number>('nbrEtudiant', 0);
 
     return (
-
-
         <div className='card'>
             <h3 className='cardTitle'>Nombre d&apos;étudiants inscrits</h3>
             <p className='studentCount'>
@@ -39,8 +36,6 @@ function SectionEtudiant() {
                 Réinitialiser
             </button>
         </div>
-
-
     );
 }
 

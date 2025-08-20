@@ -1,5 +1,5 @@
-import { useDatasStorage } from '../hooks/useDatasStorage';
-import '../App.css';
+import { useDatasStorage } from '../../hooks/useDatasStorage';
+
 import { useForm } from 'react-hook-form';
 
 export type User = {
@@ -15,7 +15,7 @@ function SectionPorfesseur() {
         nom: '',
         email: '',
         prenom: '',
-        statut: 'professeur'
+        statut: ''
     });
 
     const [nom, setNom] = useDatasStorage<string>('nom', '');
@@ -34,9 +34,9 @@ function SectionPorfesseur() {
         mode: 'onSubmit',
         reValidateMode: 'onChange',
         defaultValues: {
-            nom: user.nom || '',
-            prenom: user.prenom || '',
-            email: user.email || '',
+            nom: user.nom,
+            prenom: user.prenom,
+            email: user.email,
         },
     });
     const {
@@ -44,9 +44,8 @@ function SectionPorfesseur() {
     } = methods;
 
     return (
-
         <div className='card'>
-            <h3 className='cardTitle'>Profil professeur {nom} {prenom} </h3>
+            <h3 className='cardTitle'>Profil Professeur {nom} {prenom} </h3>
             <form
                 onSubmit={handleSubmit(submit)}
                 className='profileForm'
@@ -54,8 +53,8 @@ function SectionPorfesseur() {
                 <label>
                     Nom :
                     <input
+                        {...methods.register('nom')}
                         type='text'
-                        value={user.nom}
                         onChange={e => {
                             const selectedValue = e.target.value;
                             setUser({ ...user, nom: selectedValue })
@@ -68,8 +67,8 @@ function SectionPorfesseur() {
                 <label>
                     Prénom :
                     <input
+                        {...methods.register('prenom')}
                         type='text'
-                        value={user.prenom}
                         onChange={e => {
                             const selectedValue = e.target.value;
                             setUser({ ...user, prenom: selectedValue })
@@ -82,8 +81,8 @@ function SectionPorfesseur() {
                 <label>
                     Email :
                     <input
+                        {...methods.register('email')}
                         type='email'
-                        value={user.email}
                         onChange={e => setUser({ ...user, email: e.target.value })}
                         className='input'
                     />
@@ -102,7 +101,6 @@ function SectionPorfesseur() {
                 </button>
             </form>
         </div>
-
     );
 }
 

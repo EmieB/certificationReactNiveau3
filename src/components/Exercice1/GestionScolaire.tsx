@@ -1,7 +1,7 @@
 import SectionEtudiant from "./SectionEtudiant";
 import SectionPorfesseur from "./SectionProfesseur";
 
-export const GestionScolaire = () => {
+const GestionScolaire = () => {
     return (<div>
 
         <h2 >
