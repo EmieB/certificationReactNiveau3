@@ -24,7 +24,7 @@ function SectionEtudiant() {
                 Ajouter
             </button>
             <button
-                onClick={() => setNbrEtudiant(nbrEtudiant - 1)}
+                onClick={() => setNbrEtudiant((c) => c - 1)}
                 className='buttonWarning'
             >
                 Retirer

@@ -62,7 +62,7 @@ export const GestionExo3ComboBox = () => {
         fetchData();
     }, []);
 
-    const listNomProfesseur = [{ 'nomPrenom': 'Paul DUPUIS' }, { 'nomPrenom': 'Jacques MORIN' }, { 'nomPrenom': 'Marie PIERRE' }, { 'nomPrenom': 'Pierre LACHAISE' }, { 'nomPrenom': 'Gabin ROULARD' }, { 'nomPrenom': 'Pauline CHAISE' }]
+    const listNomProfesseur = [{ 'nomPrenom': 'Benjamin Benolus' }, { 'nomPrenom': 'Paul DUPUIS' }, { 'nomPrenom': 'Jacques MORIN' }, { 'nomPrenom': 'Marie PIERRE' }, { 'nomPrenom': 'Pierre LACHAISE' }, { 'nomPrenom': 'Gabin ROULARD' }, { 'nomPrenom': 'Pauline CHAISE' }]
     return (<>
         <Combobox optionsList={optionList} label='Filtre Adresse Etudiant' elementFiltered={'address.street'} miseAjourValueChange={miseAjourEtudiant} />
         <Combobox optionsList={optionList} label='Filtre Nom Etudiant' elementFiltered={'name'} miseAjourValueChange={miseAjourEtudiant} />

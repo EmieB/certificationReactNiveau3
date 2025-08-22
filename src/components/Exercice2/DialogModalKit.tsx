@@ -83,7 +83,7 @@ export default function DialogModalKit({
                             onClick={handleClose}
                             className="close"
                         >
-                            ✕
+                            X
                         </button>
                     </div>
                 </div>

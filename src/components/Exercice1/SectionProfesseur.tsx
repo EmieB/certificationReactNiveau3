@@ -57,6 +57,7 @@ function SectionPorfesseur() {
                         type='text'
                         onChange={e => {
                             const selectedValue = e.target.value;
+                            // On modifie uniquement la valeur du nom dans le state user
                             setUser({ ...user, nom: selectedValue })
                             setNom(selectedValue)
                         }}
@@ -71,6 +72,7 @@ function SectionPorfesseur() {
                         type='text'
                         onChange={e => {
                             const selectedValue = e.target.value;
+                            // On modifie uniquement la valeur du prenom dans le state user
                             setUser({ ...user, prenom: selectedValue })
                             setPrenom(selectedValue)
                         }}

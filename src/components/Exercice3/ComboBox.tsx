@@ -7,7 +7,7 @@ type ComboboxProps = {
     miseAjourValueChange?: (value: any) => void;
 };
 
-export const Combobox = ({ elementFiltered, label, optionsList, miseAjourValueChange }: ComboboxProps) => {
+export const Combobox = ({ elementFiltered, label, optionsList, miseAjourValueChange: valueChange }: ComboboxProps) => {
 
     // Fonction pour naviguer dans un objet avec un chemin de profondeur arbitraire
     const getValueFiltered = (obj: any, path: string): string => {
@@ -85,8 +85,8 @@ export const Combobox = ({ elementFiltered, label, optionsList, miseAjourValueCh
                                         const originalItem = optionsList.find(item =>
                                             getValueFiltered(item, elementFiltered) === option
                                         );
-                                        if (miseAjourValueChange && originalItem) {
-                                            miseAjourValueChange(originalItem);  // On renvoie l'objet complet
+                                        if (valueChange && originalItem) {
+                                            valueChange(originalItem);  // On renvoie l'objet complet
                                         }
 
                                     }}

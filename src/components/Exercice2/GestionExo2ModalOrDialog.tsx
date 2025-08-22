@@ -3,6 +3,7 @@ import DialogModalKit from "./DialogModalKit";
 import FormulaireLogin from "./FormulaireLogin";
 
 export const GestionExo2ModalOrDialog = () => {
+
     /////// Controle Externe ////// 
 
     // États pour contrôler les dialogs et modals
@@ -30,6 +31,7 @@ export const GestionExo2ModalOrDialog = () => {
     return (<>
         <div>
             <h2>Controle Interne</h2>
+            {/* Boite de dialogue - l'utilisateur peut continuer à interagir avec le reste de la page */}
             <DialogModalKit
                 isModal={false}
                 dialogOrModalOpenButton={
@@ -58,6 +60,7 @@ export const GestionExo2ModalOrDialog = () => {
         </div>
         <div >
             <h2>Controle Externe</h2>
+            {/* Modal- l'utilisateur doit fermer la boite de dialogue avant de pouvoir interagir avec le reste de la page Web */}
             <DialogModalKit
                 isModal={true}
                 externalIsOpen={isModalOpen}
@@ -87,6 +90,7 @@ export const GestionExo2ModalOrDialog = () => {
                 }
             />
             <br />
+            {/* Boite de dialogue - l'utilisateur peut continuer à interagir avec le reste de la page */}
             <DialogModalKit
                 isModal={false}
                 externalIsOpen={isDialogOpen}
@@ -119,7 +123,7 @@ export const GestionExo2ModalOrDialog = () => {
             <h3>
                 États actuels : Modal = {isModalOpen ? 'Ouvert' : 'Fermé'} | Dialog = {isDialogOpen ? 'Ouvert' : 'Fermé'}
             </h3>
-
+            {/* Ouverture à l'aide de boutons presents dans le composant parent */}
             <button
                 className="button"
                 style={{ backgroundColor: '#107063ff', marginRight: '10px' }}
@@ -134,11 +138,11 @@ export const GestionExo2ModalOrDialog = () => {
             >
                 Ouvrir Dialog
             </button>
+            {/* Ouverture à l'aide du bouton present dans le composant parent */}
             <button
                 className="button"
                 style={{ backgroundColor: '#dc3545' }}
                 onClick={closeDialog}
-                disabled={!isDialogOpen}
             >
                 Fermer Dialog
             </button>
